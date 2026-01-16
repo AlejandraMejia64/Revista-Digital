@@ -3,56 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Revista Digital | Uso responsable de la tecnología</title>
-   <link rel="icon" href="imgindex/doloressucre.ico" type="image/x-icon">
+  <title>Revista Digital | Juegos educativos</title>
+  <link rel="icon" href="imgindex/doloressucre.ico" type="image/x-icon">
   <link rel="stylesheet" href="estilito chulo xd.css"/>
   <script src="banner.js"></script>
 </head>
-<body>
+<body id="top">
 
-  <!-- Barra de navegación fija -->
-  <header class="site-header">
-    <nav class="navbar container">
-      <div class="logo">Revista Digital</div>
-      <ul class="nav-links">
-        <!-- 5 enlaces principales en el banner -->
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="revista.html">Revista</a></li>
-        <li><a href="investigacion.html">Investigación</a></li>
-       <li><a href="resultados.html">Recomendaciones</a></li>
-        <li><a href="juegos.html">Juegos</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="site-header">
+  <nav class="navbar container">
+    <div class="logo">Revista Digital</div>
+    <ul class="nav-links">
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="revista.html">Revista</a></li>
+      <li><a href="investigacion.html">Investigación</a></li>
+      <li><a href="resultados.html">Resultados</a></li>
+      <li><a href="juegos.html" class="active">Juegos</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Banner animado -->
- <section class="banner">
+<section class="banner">
   <div class="banner-image" id="bannerImage"></div>
   <div class="banner-content container" id="bannerContent">
-    <h1 id="bannerTitle">Uso excesivo de la tecnología y rendimiento académico</h1>
-    <p id="bannerText">Una revista digital para informar, reflexionar y promover hábitos responsables en 1ero de Bachillerato.</p>
-    <div class="banner-cta">
-      <a href="#revista-digital" class="btn primary">Ver revista</a>
-      <a href="#recomendaciones" class="btn ghost">Buenas prácticas</a>
-    </div>
+    <h1 id="bannerTitle">Juegos educativos</h1>
+    <p id="bannerText">
+      Aprende de forma divertida sobre el uso responsable de la tecnología
+    </p>
   </div>
 </section>
 
+<!-- SECCIÓN INTRO -->
+<section class="section container">
+  <h2>🎮 Aprende jugando</h2>
+  <p>
+    Los juegos educativos permiten reforzar conocimientos de manera dinámica y participativa.
+    A través de estas actividades podrás reflexionar sobre tus hábitos digitales, el uso
+    responsable de la tecnología y su impacto en tu rendimiento académico.
+  </p>
+</section>
 
+<!-- SECCIÓN JUEGOS -->
+<section class="section light container">
+  <h2>🕹️ Actividades interactivas</h2>
 
+  <div class="cards-grid">
 
+    <!-- Juego 1 -->
+    <div class="card">
+      <h3>🧠 Verdadero o falso</h3>
+      <p>
+        Lee cada afirmación y decide si es verdadera o falsa.
+      </p>
+      <ul class="vf-list">
+        <li data-respuesta="true">
+          El uso excesivo del celular puede afectar la concentración.
+        </li>
+        <li data-respuesta="false">
+          Usar tecnología antes de dormir mejora el descanso.
+        </li>
+        <li data-respuesta="true">
+          La tecnología debe utilizarse con un propósito académico.
+        </li>
+      </ul>
+    </div>
 
+    <!-- Juego 2 -->
+    <div class="card">
+      <h3>⏰ Organiza tu tiempo</h3>
+      <p>
+        Analiza tu rutina diaria y clasifica el uso de la tecnología en:
+      </p>
+      <ul>
+        <li>Uso académico</li>
+        <li>Uso recreativo</li>
+        <li>Tiempo innecesario frente a pantallas</li>
+      </ul>
+    </div>
+
+    <!-- Juego 3 -->
+    <div class="card">
+      <h3>📱 Detecta el mal hábito</h3>
+      <p>
+        Identifica cuáles de las siguientes acciones representan un uso irresponsable:
+      </p>
+      <ul>
+        <li>Usar el celular durante clases</li>
+        <li>Hacer pausas visuales</li>
+        <li>Dormir con el teléfono encendido</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECCIÓN RETO -->
+<section class="section container">
+  <h2>🏆 Reto digital</h2>
+  <p>
+    Intenta pasar un día reduciendo el tiempo en redes sociales y utiliza la tecnología
+    únicamente para actividades académicas. Al finalizar el día, reflexiona:
+  </p>
+
+  <ul class="lista-recomendaciones">
+    <li>¿Mejoró tu concentración?</li>
+    <li>¿Te sentiste menos cansado?</li>
+    <li>¿Aprovechaste mejor tu tiempo?</li>
+  </ul>
+</section>
 
 <footer class="site-footer">
   <div class="footer-container container">
 
-    <!-- Logo y descripción -->
     <div class="footer-info">
       <img src="imgindex/doloressucre.jpeg" alt="Logo Dolores Sucre" class="footer-logo" />
-      <p>Sitio web educativo diseñado para estudiantes de Primero de Bachillerato - Unidad Educativa Dolores Sucre.</p>
+      <p>
+        Sitio web educativo diseñado para estudiantes de Primero de Bachillerato - 
+        Unidad Educativa Dolores Sucre.
+      </p>
     </div>
 
-    <!-- Enlaces rápidos -->
     <div class="footer-links">
       <h4>Enlaces Rápidos</h4>
       <ul>
@@ -64,11 +134,10 @@
       </ul>
     </div>
 
-    <!-- Información de contacto -->
     <div class="footer-contact">
       <h4>Información de Contacto</h4>
       <p>🏫 Unidad Educativa Dolores Sucre</p>
-      <p>🖥️ Materia: Tecnología/Informática</p>
+      <p>🖥️ Materia: Tecnología / Informática</p>
       <p>📅 Año Escolar: 2025-2026</p>
     </div>
 
@@ -79,5 +148,6 @@
     <a href="#top" class="scroll-top">⬆</a>
   </div>
 </footer>
+<script src="juegos.js"></script>
 </body>
 </html>

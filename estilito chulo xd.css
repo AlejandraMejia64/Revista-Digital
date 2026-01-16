@@ -528,3 +528,287 @@ body{
   background: #031655;
 }
 
+/* =================================================
+   BIENVENIDA / INGRESO A LA REVISTA (AISLADO)
+   Compatible con hola.js
+================================================= */
+
+.welcome {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--bg),
+    #111827,
+    #020617
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Tarjeta central */
+.welcome .card {
+  background: rgba(255, 255, 255, 0.97);
+  padding: 44px 38px;
+  width: 340px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.45);
+  animation: welcomeCardIn 0.9s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes welcomeCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Saludo dinámico */
+#saludo {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* Subtítulo */
+.welcome .sub {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* Loader */
+.welcome .loader {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 4px solid #e5e7eb;
+  border-top-color: var(--primary);
+  animation: spinWelcome 0.9s linear infinite;
+}
+
+/* Animación del loader */
+@keyframes spinWelcome {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive seguro */
+@media (max-width: 420px) {
+  .welcome .card {
+    width: 90%;
+    padding: 36px 24px;
+  }
+
+  #saludo {
+    font-size: 1.7rem;
+  }
+}
+
+/* ===============================
+   JUEGOS EDUCATIVOS – FIX DEFINITIVO
+================================ */
+
+/* CONTENEDOR DE JUEGOS */
+.section.light {
+  padding-bottom: 100px; /* fuerza separación real */
+}
+
+/* Grid de juegos */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 36px;
+}
+
+/* Tarjetas */
+.cards-grid .card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 26px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+  border-top: 6px solid var(--primary);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;          /* 🔑 clave */
+}
+
+/* Títulos */
+.cards-grid .card h3 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  color: #00132e;
+}
+
+/* Texto */
+.cards-grid .card p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+/* Listas */
+.cards-grid .card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: auto;     /* 🔑 empuja lista abajo */
+}
+
+/* Opciones */
+.cards-grid .card ul li {
+  background: #f1f5f9;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.cards-grid .card ul li:hover {
+  background: #e0e7ff;
+}
+
+/* ===============================
+   RETO DIGITAL (SECCIÓN SIGUIENTE)
+================================ */
+
+.section:not(.light) {
+  margin-top: 80px; /* separación real */
+}
+
+/* Reto digital */
+.lista-recomendaciones {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 24px auto 0;
+}
+
+.lista-recomendaciones li {
+  background: linear-gradient(
+    135deg,
+    #e0f2fe,
+    #ecfeff
+  );
+  margin-bottom: 14px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   JUEGOS – INTERACCIÓN Y FEEDBACK
+================================ */
+
+/* Transición más viva al interactuar */
+.cards-grid .card ul li {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto ripple suave al hacer clic */
+.cards-grid .card ul li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(37, 99, 235, 0.15),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cards-grid .card ul li:active::after {
+  opacity: 1;
+}
+
+/* Feedback visual cuando ya se respondió */
+.cards-grid .card ul li[style*="✔"],
+.cards-grid .card ul li[style*="Correcto"] {
+  animation: successPop 0.4s ease;
+}
+
+.cards-grid .card ul li[style*="✖"],
+.cards-grid .card ul li[style*="Incorrecto"] {
+  animation: errorShake 0.4s ease;
+}
+
+/* Animación éxito */
+@keyframes successPop {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animación error */
+@keyframes errorShake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+/* Cursor educativo */
+.cards-grid .card ul li {
+  cursor: pointer;
+}
+
+/* Mensaje motivador al final del reto */
+.section:last-of-type p {
+  position: relative;
+}
+
+.section:last-of-type p::after {
+  content: "💡 Recuerda: la tecnología es una herramienta, no una distracción.";
+  display: block;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Hover más agradable */
+.cards-grid .card ul li:hover {
+  background: linear-gradient(
+    135deg,
+    #e0e7ff,
+    #f0f9ff
+  );
+}
