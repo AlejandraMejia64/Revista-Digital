@@ -361,3 +361,30 @@ body {
   z-index: -1;
   background: linear-gradient(120deg, #0f172a, #020617);
 }
+
+/* ===============================
+   SECCIONES GENERALES (FIX)
+================================ */
+
+.section {
+  padding: 80px 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.section.light {
+  background: var(--bg-alt);
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.section p,
+.section li {
+  font-size: 1.05rem;
+  color: #374151;
+  max-width: 900px;
+}
